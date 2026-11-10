@@ -1,0 +1,49 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#8238
+    [34mall[39m: [
+      [34;4mApp\Models\User[39;24m {#8239
+        [34mid[39m: [35m1[39m,
+        [34mname[39m: [32m"[39m[32mIdell Walsh[39m[32m"[39m,
+        [34memail[39m: [32m"[39m[32mbernardo44@example.net[39m[32m"[39m,
+      },
+      [34;4mApp\Models\User[39;24m {#8240
+        [34mid[39m: [35m2[39m,
+        [34mname[39m: [32m"[39m[32mMoises Satterfield IV[39m[32m"[39m,
+        [34memail[39m: [32m"[39m[32mtrunolfsdottir@example.org[39m[32m"[39m,
+      },
+      [34;4mApp\Models\User[39;24m {#8241
+        [34mid[39m: [35m3[39m,
+        [34mname[39m: [32m"[39m[32mAndreanne Luettgen[39m[32m"[39m,
+        [34memail[39m: [32m"[39m[32mrhianna54@example.org[39m[32m"[39m,
+      },
+      [34;4mApp\Models\User[39;24m {#8242
+        [34mid[39m: [35m4[39m,
+        [34mname[39m: [32m"[39m[32mProf. Jocelyn Rippin DDS[39m[32m"[39m,
+        [34memail[39m: [32m"[39m[32mhkozey@example.com[39m[32m"[39m,
+      },
+      [34;4mApp\Models\User[39;24m {#8243
+        [34mid[39m: [35m5[39m,
+        [34mname[39m: [32m"[39m[32mJeffry Wehner[39m[32m"[39m,
+        [34memail[39m: [32m"[39m[32mlynn61@example.org[39m[32m"[39m,
+      },
+      [34;4mApp\Models\User[39;24m {#8244
+        [34mid[39m: [35m6[39m,
+        [34mname[39m: [32m"[39m[32mIzan[39m[32m"[39m,
+        [34memail[39m: [32m"[39m[32mizan@taskora.test[39m[32m"[39m,
+      },
+      [34;4mApp\Models\User[39;24m {#8245
+        [34mid[39m: [35m7[39m,
+        [34mname[39m: [32m"[39m[32mPedro[39m[32m"[39m,
+        [34memail[39m: [32m"[39m[32mpedro@taskora.test[39m[32m"[39m,
+      },
+      [34;4mApp\Models\User[39;24m {#8246
+        [34mid[39m: [35m8[39m,
+        [34mname[39m: [32m"[39m[32mMaría[39m[32m"[39m,
+        [34memail[39m: [32m"[39m[32mmaria@taskora.test[39m[32m"[39m,
+      },
+      [34;4mApp\Models\User[39;24m {#8247
+        [34mid[39m: [35m9[39m,
+        [34mname[39m: [32m"[39m[32mJavier[39m[32m"[39m,
+        [34memail[39m: [32m"[39m[32mjavier@taskora.test[39m[32m"[39m,
+      },
+    ],
+  }

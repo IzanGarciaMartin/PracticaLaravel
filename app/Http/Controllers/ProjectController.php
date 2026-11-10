@@ -8,14 +8,26 @@ use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
+
+
     public function index()
     {
+        $user = Auth::user();
+
         $projects = Project::with('owner')
+            ->where(function ($query) use ($user) {
+                $query->where('user_id', $user->id)
+                    ->orWhereHas('members', function ($query) use ($user) {
+                        $query->where('users.id', $user->id);
+                    });
+            })
             ->latest()
             ->paginate(10);
 
         return view('projects.index', compact('projects'));
     }
+
+
 
     public function create()
     {
@@ -38,14 +50,22 @@ class ProjectController extends Controller
             ->with('success', 'Proyecto creado correctamente.');
     }
 
+
     public function show(Project $project)
     {
-        $this->authorizeOwner($project);
+        $isOwner = $project->user_id === Auth::id();
+
+        $isMember = $project->members()
+            ->whereKey(Auth::id())
+            ->exists();
+
+        abort_unless($isOwner || $isMember, 403);
 
         $project->load(['owner', 'members']);
 
         return view('projects.show', compact('project'));
     }
+
 
     public function edit(Project $project)
     {
