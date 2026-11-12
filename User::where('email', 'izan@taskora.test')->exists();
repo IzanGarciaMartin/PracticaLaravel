@@ -1,0 +1,88 @@
+[90m= [39m[34;4mIlluminate\Support\Collection[39;24m {#9005
+    [34mall[39m: [
+      [
+        [34m"[39m[34mid[39m[34m"[39m => [35m1[39m,
+        [34m"[39m[34mtitle[39m[34m"[39m => [32m"[39m[32mDesarrollo de Taskora[39m[32m"[39m,
+        [34m"[39m[34mowner_id[39m[34m"[39m => [35m1[39m,
+        [34m"[39m[34mmembers[39m[34m"[39m => [34;4mIlluminate\Support\Collection[39;24m {#9002
+          [34mall[39m: [
+            [
+              [34m"[39m[34mname[39m[34m"[39m => [32m"[39m[32mPedro[39m[32m"[39m,
+              [34m"[39m[34mrole[39m[34m"[39m => [32m"[39m[32madmin[39m[32m"[39m,
+              [34m"[39m[34mhours[39m[34m"[39m => [35m12[39m,
+            ],
+            [
+              [34m"[39m[34mname[39m[34m"[39m => [32m"[39m[32mMaría[39m[32m"[39m,
+              [34m"[39m[34mrole[39m[34m"[39m => [32m"[39m[32mmember[39m[32m"[39m,
+              [34m"[39m[34mhours[39m[34m"[39m => [35m5[39m,
+            ],
+          ],
+        },
+      ],
+      [
+        [34m"[39m[34mid[39m[34m"[39m => [35m2[39m,
+        [34m"[39m[34mtitle[39m[34m"[39m => [32m"[39m[32mRediseño de la web[39m[32m"[39m,
+        [34m"[39m[34mowner_id[39m[34m"[39m => [35m1[39m,
+        [34m"[39m[34mmembers[39m[34m"[39m => [34;4mIlluminate\Support\Collection[39;24m {#8270
+          [34mall[39m: [
+            [
+              [34m"[39m[34mname[39m[34m"[39m => [32m"[39m[32mPedro[39m[32m"[39m,
+              [34m"[39m[34mrole[39m[34m"[39m => [32m"[39m[32mmember[39m[32m"[39m,
+              [34m"[39m[34mhours[39m[34m"[39m => [35m8[39m,
+            ],
+            [
+              [34m"[39m[34mname[39m[34m"[39m => [32m"[39m[32mMaría[39m[32m"[39m,
+              [34m"[39m[34mrole[39m[34m"[39m => [32m"[39m[32mmember[39m[32m"[39m,
+              [34m"[39m[34mhours[39m[34m"[39m => [35m4[39m,
+            ],
+          ],
+        },
+      ],
+      [
+        [34m"[39m[34mid[39m[34m"[39m => [35m3[39m,
+        [34m"[39m[34mtitle[39m[34m"[39m => [32m"[39m[32mProyecto personal[39m[32m"[39m,
+        [34m"[39m[34mowner_id[39m[34m"[39m => [35m1[39m,
+        [34m"[39m[34mmembers[39m[34m"[39m => [34;4mIlluminate\Database\Eloquent\Collection[39;24m {#8999
+          [34mall[39m: [],
+        },
+      ],
+      [
+        [34m"[39m[34mid[39m[34m"[39m => [35m4[39m,
+        [34m"[39m[34mtitle[39m[34m"[39m => [32m"[39m[32mPlataforma colaborativa[39m[32m"[39m,
+        [34m"[39m[34mowner_id[39m[34m"[39m => [35m1[39m,
+        [34m"[39m[34mmembers[39m[34m"[39m => [34;4mIlluminate\Support\Collection[39;24m {#8995
+          [34mall[39m: [
+            [
+              [34m"[39m[34mname[39m[34m"[39m => [32m"[39m[32mPedro[39m[32m"[39m,
+              [34m"[39m[34mrole[39m[34m"[39m => [32m"[39m[32madmin[39m[32m"[39m,
+              [34m"[39m[34mhours[39m[34m"[39m => [35m10[39m,
+            ],
+            [
+              [34m"[39m[34mname[39m[34m"[39m => [32m"[39m[32mMaría[39m[32m"[39m,
+              [34m"[39m[34mrole[39m[34m"[39m => [32m"[39m[32madmin[39m[32m"[39m,
+              [34m"[39m[34mhours[39m[34m"[39m => [35m20[39m,
+            ],
+            [
+              [34m"[39m[34mname[39m[34m"[39m => [32m"[39m[32mJavier[39m[32m"[39m,
+              [34m"[39m[34mrole[39m[34m"[39m => [32m"[39m[32mmember[39m[32m"[39m,
+              [34m"[39m[34mhours[39m[34m"[39m => [35m3[39m,
+            ],
+          ],
+        },
+      ],
+      [
+        [34m"[39m[34mid[39m[34m"[39m => [35m5[39m,
+        [34m"[39m[34mtitle[39m[34m"[39m => [32m"[39m[32mProyecto privado de Pedro[39m[32m"[39m,
+        [34m"[39m[34mowner_id[39m[34m"[39m => [35m2[39m,
+        [34m"[39m[34mmembers[39m[34m"[39m => [34;4mIlluminate\Support\Collection[39;24m {#8993
+          [34mall[39m: [
+            [
+              [34m"[39m[34mname[39m[34m"[39m => [32m"[39m[32mJavier[39m[32m"[39m,
+              [34m"[39m[34mrole[39m[34m"[39m => [32m"[39m[32mmember[39m[32m"[39m,
+              [34m"[39m[34mhours[39m[34m"[39m => [35m6[39m,
+            ],
+          ],
+        },
+      ],
+    ],
+  }

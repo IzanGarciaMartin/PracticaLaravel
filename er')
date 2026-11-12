@@ -1,0 +1,52 @@
+[90m= [39m[34;4mIlluminate\Support\Collection[39;24m {#9034
+    [34mall[39m: [
+      {#9003
+        +"[1mtitle[22m": [32m"[39m[32mDesarrollo de Taskora[39m[32m"[39m,
+        +"[1mname[22m": [32m"[39m[32mPedro[39m[32m"[39m,
+        +"[1mrole[22m": [32m"[39m[32madmin[39m[32m"[39m,
+        +"[1mcontribution_hours[22m": [35m12[39m,
+      },
+      {#9033
+        +"[1mtitle[22m": [32m"[39m[32mDesarrollo de Taskora[39m[32m"[39m,
+        +"[1mname[22m": [32m"[39m[32mMaría[39m[32m"[39m,
+        +"[1mrole[22m": [32m"[39m[32mmember[39m[32m"[39m,
+        +"[1mcontribution_hours[22m": [35m5[39m,
+      },
+      {#9032
+        +"[1mtitle[22m": [32m"[39m[32mRediseño de la web[39m[32m"[39m,
+        +"[1mname[22m": [32m"[39m[32mPedro[39m[32m"[39m,
+        +"[1mrole[22m": [32m"[39m[32madmin[39m[32m"[39m,
+        +"[1mcontribution_hours[22m": [35m8[39m,
+      },
+      {#9029
+        +"[1mtitle[22m": [32m"[39m[32mRediseño de la web[39m[32m"[39m,
+        +"[1mname[22m": [32m"[39m[32mMaría[39m[32m"[39m,
+        +"[1mrole[22m": [32m"[39m[32mmember[39m[32m"[39m,
+        +"[1mcontribution_hours[22m": [35m4[39m,
+      },
+      {#9030
+        +"[1mtitle[22m": [32m"[39m[32mPlataforma colaborativa[39m[32m"[39m,
+        +"[1mname[22m": [32m"[39m[32mPedro[39m[32m"[39m,
+        +"[1mrole[22m": [32m"[39m[32madmin[39m[32m"[39m,
+        +"[1mcontribution_hours[22m": [35m10[39m,
+      },
+      {#9000
+        +"[1mtitle[22m": [32m"[39m[32mPlataforma colaborativa[39m[32m"[39m,
+        +"[1mname[22m": [32m"[39m[32mMaría[39m[32m"[39m,
+        +"[1mrole[22m": [32m"[39m[32madmin[39m[32m"[39m,
+        +"[1mcontribution_hours[22m": [35m20[39m,
+      },
+      {#8973
+        +"[1mtitle[22m": [32m"[39m[32mPlataforma colaborativa[39m[32m"[39m,
+        +"[1mname[22m": [32m"[39m[32mJavier[39m[32m"[39m,
+        +"[1mrole[22m": [32m"[39m[32mmember[39m[32m"[39m,
+        +"[1mcontribution_hours[22m": [35m3[39m,
+      },
+      {#8972
+        +"[1mtitle[22m": [32m"[39m[32mProyecto privado de Pedro[39m[32m"[39m,
+        +"[1mname[22m": [32m"[39m[32mJavier[39m[32m"[39m,
+        +"[1mrole[22m": [32m"[39m[32mmember[39m[32m"[39m,
+        +"[1mcontribution_hours[22m": [35m6[39m,
+      },
+    ],
+  }
