@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Identidad visual de Taskora */
+:root {
+    --color-primary: #713DE0;
+    --color-secondary: #D6B5FE;
+    --color-accent: #888CE4;
+
+    --color-background: #F7F6FA;
+    --color-surface: #FFFFFF;
+
+    --color-text: #252238;
+    --color-muted: #777386;
+    --color-border: #EAE7F0;
+}
+
+/* Estilos globales */
+@layer base {
+    html {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+        background-color: var(--color-background);
+        color: var(--color-text);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+        background-color: var(--color-secondary);
+        color: var(--color-text);
+    }
+}

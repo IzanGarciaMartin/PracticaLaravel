@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Http\Controllers\ProfileController;
@@ -10,7 +11,24 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $user = auth()->user();
+
+    $ownedProjects = $user->ownedProjects()
+        ->latest()
+        ->take(5)
+        ->get();
+
+    $ownedProjectsCount = $user->ownedProjects()->count();
+
+    $collaborationsCount = $user->projects()
+        ->where('projects.user_id', '!=', $user->id)
+        ->count();
+
+    return view('dashboard', compact(
+        'ownedProjects',
+        'ownedProjectsCount',
+        'collaborationsCount'
+    ));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -21,6 +39,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('projects', ProjectController::class);
+
     // Gestión de participantes de proyectos
     Route::post('/projects/{project}/members', [ProjectMemberController::class, 'store'])
         ->name('projects.members.store');

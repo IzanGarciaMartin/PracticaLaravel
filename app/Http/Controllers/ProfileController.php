@@ -11,7 +11,7 @@ use Illuminate\View\View;
 use App\Models\Project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
-
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -45,6 +45,7 @@ class ProfileController extends Controller
      * Delete the user's account.
      */
 
+
     public function destroy(Request $request): RedirectResponse
     {
         // Comprobamos la contraseña y que transfers sea un array.
@@ -72,7 +73,6 @@ class ProfileController extends Controller
             $admins = $eligibleMembers
                 ->where('pivot.role', 'admin');
 
-            // Si no hay participantes, el proyecto se eliminará.
             // Si hay participantes pero ningún administrador,
             // el usuario tendrá que elegir al nuevo propietario.
             if ($eligibleMembers->isNotEmpty() && $admins->isEmpty()) {
@@ -166,17 +166,19 @@ class ProfileController extends Controller
                 );
             }
 
-            // Cuando todos los proyectos están resueltos, eliminamos la cuenta.
+            // Cerramos la sesión antes de eliminar la cuenta.
+            Auth::logout();
+
+            // Eliminamos la cuenta.
             $user->delete();
         });
 
-        // Cerramos la sesión y limpiamos los datos de sesión.
-        Auth::logout();
-
+        // Limpiamos los datos de sesión.
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
     }
+
 
 }
