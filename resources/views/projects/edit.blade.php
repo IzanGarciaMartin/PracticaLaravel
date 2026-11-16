@@ -20,6 +20,7 @@
                     </p>
                 </div>
 
+                <!-- Formulario de edición -->
                 <form action="{{ route('projects.update', $project) }}" method="POST" class="space-y-6">
                     @csrf
                     @method('PATCH')
@@ -30,7 +31,8 @@
                             Nombre del proyecto
                         </label>
 
-                        <input type="text" name="title" id="title" value="{{ old('title', $project->title) }}"
+                        <input type="text" name="title" id="title"
+                            value="{{ old('title', $project->title) }}"
                             maxlength="255" required
                             class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500">
 
@@ -77,6 +79,7 @@
 
                         <select name="status" id="status" required
                             class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500">
+
                             <option value="pending" {{ old('status', $project->status) === 'pending' ? 'selected' : '' }}>
                                 Pendiente
                             </option>
@@ -96,21 +99,39 @@
                     </div>
 
                     <!-- Botones -->
-                    <div class="flex items-center justify-end gap-3 border-t pt-6">
+                    <div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-3 border-t pt-6">
 
-                        <a href="{{ route('projects.show', $project) }}"
-                            class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
-                            Cancelar
-                        </a>
-
+                        <!-- Botón de eliminación -->
                         <button type="submit"
-                            class="rounded-lg bg-violet-600 px-5 py-2 text-sm font-semibold text-white hover:bg-violet-700">
-                            Guardar cambios
+                            form="delete-project-form"
+                            class="w-full sm:w-auto rounded-lg bg-red-100 px-4 py-2 text-sm font-semibold text-red-700 hover:bg-red-200">
+                            Eliminar proyecto
                         </button>
 
-                    </div>
+                        <div class="flex items-center gap-3">
+                            <a href="{{ route('projects.show', $project) }}"
+                                class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                Cancelar
+                            </a>
 
+                            <button type="submit"
+                                class="rounded-lg bg-violet-600 px-5 py-2 text-sm font-semibold text-white hover:bg-violet-700">
+                                Guardar cambios
+                            </button>
+                        </div>
+
+                    </div>
                 </form>
+
+                <!-- Formulario de eliminación independiente -->
+                <form id="delete-project-form"
+                    action="{{ route('projects.destroy', $project) }}"
+                    method="POST"
+                    onsubmit="return confirm('¿Estás seguro de que quieres eliminar este proyecto? Esta acción no se puede deshacer.')">
+                    @csrf
+                    @method('DELETE')
+                </form>
+
             </div>
         </div>
     </div>

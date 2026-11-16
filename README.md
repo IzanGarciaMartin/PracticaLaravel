@@ -1,58 +1,159 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Taskora
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Taskora** es una aplicación web de gestión de proyectos desarrollada con Laravel. Permite crear y organizar proyectos, gestionar participantes y colaborar con otros usuarios desde una interfaz intuitiva y adaptable a distintos dispositivos.
 
-## About Laravel
+## Características principales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Autenticación:** registro, inicio de sesión y recuperación de contraseña.
+- **Gestión de proyectos:** creación, consulta, edición y eliminación de proyectos.
+- **Colaboración:** incorporación y gestión de participantes en los proyectos.
+- **Roles y permisos:** diferenciación entre propietarios, administradores y miembros.
+- **Gestión de cuentas:** actualización del perfil y contraseña, además de eliminación segura de la cuenta.
+- **Transferencia de propiedad:** gestión de la propiedad de los proyectos cuando se elimina una cuenta.
+- **Dashboard:** resumen de la actividad del usuario, estadísticas y proyectos recientes.
+- **Diseño responsive:** interfaz adaptable a escritorio, tablet y dispositivos móviles.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tecnologías utilizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+| Tecnología | Uso |
+|---|---|
+| Laravel 13 | Framework backend |
+| PHP 8.5 | Lenguaje de programación |
+| MySQL 8.4 | Base de datos |
+| Laravel Sail | Entorno de desarrollo con Docker |
+| Blade | Motor de plantillas |
+| Tailwind CSS | Estilos e interfaz |
+| JavaScript | Interactividad |
+| Vite | Compilación de recursos frontend |
 
-## Learning Laravel
+## Requisitos previos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Antes de instalar el proyecto, es necesario disponer de:
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Git.
+- Docker y Docker Compose.
+- Composer.
+- Node.js y npm.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+PHP no necesita estar instalado directamente en el sistema si se ejecutan los comandos de Laravel mediante Sail.
 
-## Agentic Development
+## Instalación y configuración
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### 1. Clonar el repositorio
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone URL_DEL_REPOSITORIO
+cd taskora
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Instalar las dependencias
 
-## Contributing
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Configurar el entorno
 
-## Code of Conduct
+Crear el archivo `.env` a partir del ejemplo:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+Configurar los datos de conexión a la base de datos en el archivo `.env`. Para utilizar MySQL mediante Sail, la configuración debe apuntar al servicio de Docker:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```env
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=sail
+DB_PASSWORD=password
+```
 
-## License
+Los valores deben coincidir con la configuración del entorno Docker del proyecto.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 4. Iniciar Docker
+
+```bash
+./vendor/bin/sail up -d
+```
+
+### 5. Generar la clave de aplicación
+
+```bash
+./vendor/bin/sail artisan key:generate
+```
+
+### 6. Ejecutar las migraciones
+
+```bash
+./vendor/bin/sail artisan migrate
+```
+
+### 7. Compilar los recursos frontend
+
+```bash
+npm run build
+```
+
+### 8. Acceder a la aplicación
+
+Con los contenedores en funcionamiento, abrir en el navegador:
+
+[http://localhost](http://localhost)
+
+Desde la aplicación se puede crear una cuenta mediante el formulario de registro.
+
+## Ejecución de tests
+
+Para ejecutar las pruebas automatizadas del proyecto:
+
+```bash
+./vendor/bin/sail artisan test
+```
+
+La suite de pruebas verifica funcionalidades relacionadas con:
+
+- Autenticación y registro.
+- Gestión del perfil.
+- Gestión de proyectos.
+- Gestión de participantes y permisos.
+- Eliminación de cuentas y transferencia de propiedad.
+
+## Estructura general
+
+```text
+taskora/
+├── app/
+│   ├── Http/
+│   │   └── Controllers/
+│   └── Models/
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   ├── css/
+│   ├── js/
+│   └── views/
+├── routes/
+│   ├── web.php
+│   └── auth.php
+├── tests/
+│   ├── Feature/
+│   └── Unit/
+├── public/
+├── docker-compose.yml
+└── README.md
+```
+
+## Uso de inteligencia artificial
+
+Durante el desarrollo se ha utilizado inteligencia artificial como herramienta de apoyo para la revisión de código, resolución de dudas técnicas, depuración de errores y orientación durante determinadas fases de implementación.
+
+El desarrollo, integración y comprobación de las funcionalidades se ha realizado sobre el propio proyecto.
+
+## Autoría
+
+Proyecto desarrollado como parte de las actividades formativas del ciclo de **Desarrollo de Aplicaciones Web (DAW)**.
